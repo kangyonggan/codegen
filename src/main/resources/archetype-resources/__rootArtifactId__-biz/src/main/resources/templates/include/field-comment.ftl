@@ -1,0 +1,1 @@
+<#list columns as column><#if column.field==columnName>${column.comment}</#if></#list>

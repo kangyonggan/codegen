@@ -1,0 +1,29 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="smsService" class="${package}.biz.service.impl.SmsServiceImpl">
+        <constructor-arg index="0">
+            <value>${symbol_dollar}{${parentArtifactId}.sms.regionId}</value>
+        </constructor-arg>
+        <constructor-arg index="1">
+            <value>${symbol_dollar}{${parentArtifactId}.sms.accessKeyId}</value>
+        </constructor-arg>
+        <constructor-arg index="2">
+            <value>${symbol_dollar}{${parentArtifactId}.sms.secret}</value>
+        </constructor-arg>
+        <constructor-arg index="3">
+            <value>${symbol_dollar}{${parentArtifactId}.sms.domain}</value>
+        </constructor-arg>
+
+        <property name="signName" value="${symbol_dollar}{${parentArtifactId}.sms.signName}"></property>
+        <property name="templateCode" value="${symbol_dollar}{${parentArtifactId}.sms.templateCode}"></property>
+        <property name="debug" value="${symbol_dollar}{${parentArtifactId}.sms.debug}"></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,1 @@
+<#list columns as column><#if column.field==columnName && !column.default??><span class="red">*</span></#if></#list>

@@ -1,0 +1,1 @@
+${table.tableComment?substring(0, table.tableComment?length-1)}
